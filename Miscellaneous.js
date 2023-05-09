@@ -125,3 +125,9 @@ function chuyenCachChuSangChuoiBth(params) {
 	console.log(arrTemp.join(''));
 }
 //#endregion
+
+//#region newline for each character
+let stringNewLine ='dead server'
+let chars =stringNewLine.split('')
+// console.log(chars.join('\n'));
+//#endregion
