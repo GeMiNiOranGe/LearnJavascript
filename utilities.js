@@ -4,40 +4,38 @@
 // testcase 2: "   Hello    how heLLo    earth hOw aRe You yoU    thIs you THat earth   "
 // 			=> { hello: 2, how: 2, earth: 2, are: 1, you: 3, this: 1, that: 1 }
 export function countWord(string) {
-	let obj = {}
-	if (typeof (string) === 'string') {
-		let array = string.toLowerCase().match(/(\w+)/g)
-		for (let index = 0; index < array.length; index++)
-			array[index] in obj ? obj[array[index]]++ : obj[array[index]] = 1
-	}
-	return obj
+    let obj = {}
+    if (typeof (string) === 'string') {
+        let array = string.toLowerCase().match(/(\w+)/g)
+        for (let index = 0; index < array.length; index++)
+            array[index] in obj ? obj[array[index]]++ : obj[array[index]] = 1
+    }
+    return obj
 }
 export function countWordVer2(string) {
-	let obj = {}
-	if (typeof (string) === 'string') {
-		let array = string.toLowerCase().match(/(\w+)/g)
-		countDuplicateElements(array)
-	}
-	return obj
-}
-function duplicateElementReducer(accumulator, currentValue) {
-	// The left value will be taken,
-	// if the left side of the || operator has a value other than:
-	// null, ''(\0: mean null) or undefined
-	// accumulator[currentValue] has value undefined, it will be returned 0
-	// (0 || 0) + 1 => 0 + 1
-	accumulator[currentValue] = (accumulator[currentValue] || 0) + 1;
-	return accumulator;
+    let obj = {}
+    if (typeof (string) === 'string') {
+        let array = string.toLowerCase().match(/(\w+)/g)
+        countDuplicateElements(array)
+    }
+    return obj
 }
 function countDuplicateElements(arrIn) {
-	// if Array.isArray(arrIn) is true, it will execute the reduce function
-	// return Array.isArray(arrIn) && arrIn.reduce(duplicateElementReducer, {})
-	if (Array.isArray(arrIn))
-		return arrIn.reduce(duplicateElementReducer, {})
+    let initialValue = {};
+
+    // return Array.isArray(arrIn) && arrIn.reduce(duplicateElementReducer, {})
+    if (!Array.isArray(arrIn)) {
+        throw new TypeError("input must be an array");
+    }
+
+    return arrIn.reduce((accumulator, currentValue) => {
+        accumulator[currentValue] = (accumulator[currentValue] ?? 0) + 1;
+        return accumulator;
+    }, initialValue);
 }
 // best choice
-// console.log(countDuplicateElements([11, 21, 16, 19, 46, 29, 46, 19, 21]))
-// console.log(countDuplicateElements(5))
+console.log(countDuplicateElements([11, 21, 11, 19, 46, 46, 19, 21]))
+console.log(countDuplicateElements(5))
 let testcase2 = "   Hello    how heLLo    earth hOw aRe You yoU    thIs you THat earth   "
 // for (let index = 0; index < 10; index++) {
 // 	console.log('########################################################################################');
@@ -53,40 +51,40 @@ let testcase2 = "   Hello    how heLLo    earth hOw aRe You yoU    thIs you THat
 
 //#region sum array
 function sumArray(array) {
-	let sum = 0
-	for (let index = 0; index < array.length; index++) {
-		sum += array[index];
-	}
-	return sum;
+    let sum = 0
+    for (let index = 0; index < array.length; index++) {
+        sum += array[index];
+    }
+    return sum;
 }
 // console.log(sumArray([12, 3, 4, 1, 2, 3]));
 //#endregion
 
 //#region make hide each char of string
 export function makeHideEachCharOfString(strIn) {	// around 0.025-0.007ms (main time 0.013-0.016ms)
-	let newString = strIn.split('').join('||||')
-	return newString.padStart(newString.length + 2, '|').padEnd(newString.length + 4, '|')
+    let newString = strIn.split('').join('||||')
+    return newString.padStart(newString.length + 2, '|').padEnd(newString.length + 4, '|')
 }
 function makeHideEachCharOfStringArray(strIn) {		// around 0.025-0.007ms (main time 0.013-0.016ms)
-	let newString = Array.from(strIn).join('||||')
-	return newString.padStart(newString.length + 2, '|').padEnd(newString.length + 4, '|')
+    let newString = Array.from(strIn).join('||||')
+    return newString.padStart(newString.length + 2, '|').padEnd(newString.length + 4, '|')
 }
 function makeHideEachCharOfStringVer2(strIn) {
-	let newStrings = strIn.split('').join('||||').split('')
-	newStrings.push('||')
-	newStrings.unshift('||')
-	return newStrings.join('')
+    let newStrings = strIn.split('').join('||||').split('')
+    newStrings.push('||')
+    newStrings.unshift('||')
+    return newStrings.join('')
 }
 function makeHideEachCharOfStringFour(strIn) {
-	let strings
-	if (typeof (strIn) === 'string') {
-		strings = strIn.split('')
-		for (const key in strings) {
-			strings[key] = strings[key].padStart(strings[key].length + 2, '|')
-			strings[key] = strings[key].padEnd(strings[key].length + 2, '|')
-		}
-	}
-	return strings.join('')
+    let strings
+    if (typeof (strIn) === 'string') {
+        strings = strIn.split('')
+        for (const key in strings) {
+            strings[key] = strings[key].padStart(strings[key].length + 2, '|')
+            strings[key] = strings[key].padEnd(strings[key].length + 2, '|')
+        }
+    }
+    return strings.join('')
 }
 let str = 'input any string'
 // for (let index = 0; index < 10; index++) {
@@ -119,15 +117,15 @@ let arrTemp = temp.match(/(\S+)/g)	// matches any non-whitespace words
 
 //#region chuyen cach chu sang chuoi bth
 function chuyenCachChuSangChuoiBth(params) {
-	let temp = 's t r i n g'
-	console.log(temp);
-	let arrTemp = temp.match(/\w|[$&+,:;=?@#|'-<>.-^*()%!]/g)
-	console.log(arrTemp.join(''));
+    let temp = 's t r i n g'
+    console.log(temp);
+    let arrTemp = temp.match(/\w|[$&+,:;=?@#|'-<>.-^*()%!]/g)
+    console.log(arrTemp.join(''));
 }
 //#endregion
 
 //#region newline for each character
-let stringNewLine ='dead server'
-let chars =stringNewLine.split('')
+let stringNewLine = 'dead server'
+let chars = stringNewLine.split('')
 // console.log(chars.join('\n'));
 //#endregion
