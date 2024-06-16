@@ -6,18 +6,18 @@ if (numberForComparison === "10")
     console.log("=== | hello");
 if (numberForComparison == "10")
     console.log("== | hello");
-
-// ---------------------------------------------------------------------------------
+console.log();
 //#endregion
 
-console.log();
-
 //#region for statement
+let size = 5
+
 // "var" can be re-declare
 var num = 3;
-for (let num = 0; num < 5; num++) {
+for (let num = 0; num < size; num++) {
     // print on the same line
-    process.stdout.write(`${num}, `);
+    process.stdout.write(`${num}`);
+    (num != size - 1) && process.stdout.write(", ");
 }
 console.log();
 {
@@ -27,6 +27,4 @@ console.log();
 {
     console.log(num);
 }
-
-// ---------------------------------------------------------------------------------
 //#endregion
