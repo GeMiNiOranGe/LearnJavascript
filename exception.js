@@ -1,26 +1,22 @@
-export let stringCheckAdd1 = (a) => {
-    if (typeof a !== 'number') {
+export function increaseValueBy1(input) {
+    if (typeof input !== "number") {
         throw {
-            name: 'TypeError',
-            message: 'add1 needs  numbers'
-        }
+            name: "TypeError",
+            message: "add1 needs numbers"
+        };
     }
-    return a + 1
+    return input++;
 }
 
-export var try_it = () => {
+export function try_it() {
     try {
-        stringCheckAdd1('abc')
+        increaseValueBy1("abc");
     }
-    catch (e) {
-        console.log('Error: ', e);
+    catch (err) {
+        console.log("Error: ", err);
     }
 }
 
-try_it()
+try_it();
 
-export function show() {
-    console.log('hi!!!');
-}
-
-export default show
+export default try_it;

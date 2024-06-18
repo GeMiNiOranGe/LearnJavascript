@@ -2,6 +2,9 @@ const FRUIT = "this is an apple";
 const CHARS = Array.from(FRUIT);
 
 console.log("Message            :", FRUIT);
+console.log("Type of 'message'  :", typeof FRUIT);
+console.log("Message pad start  :", `'${FRUIT.padStart(FRUIT.length + 10)}'`);
+console.log("Message pad end    :", `'${FRUIT.padEnd(FRUIT.length + 10)}'`);
 // Use spread operator ... to call variadic function
 console.log("Message with '...' :", ...FRUIT);
 console.log("Temp message       :", CHARS.join(" ".repeat(3)));

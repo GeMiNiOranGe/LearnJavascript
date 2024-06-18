@@ -34,7 +34,7 @@ let label = "Test case time";
 
 //#region separate each char/word
 // enter your message here
-// let message = "Nhập thông điệp của bạn ở đây. \\ / .  $  &+ , : ;  < > .-   =   @ # | ' -  ^   * ( ?   ) % !";
+let message = "Nhập thông điệp của bạn ở đây. \\ / .  $  &+ , : ;  < > .-   =   @ # | ' -  ^   * ( ?   ) % !";
 // console.log("Raw message       :", message);
 
 // delimiter: ||, ~, \n

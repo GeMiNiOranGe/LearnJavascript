@@ -1,26 +1,26 @@
-// Add "type": "module" to your package.json file
-// {
-//   // ...
-//   "type": "module",
-//   // ...
-// }
-// import {show} from './Exception.js';
-// show()
-
 import { separateEachChar } from "./utilities.js"
 
-const FIRST_MESSAGE = "Hello world!!!";
-console.log(`Type of '${FIRST_MESSAGE}' is:`, typeof FIRST_MESSAGE);
+console.log("Type of 'undefined':", !!undefined);
 console.log();
 
+const FIRST_MESSAGE = "Hello world!!!";
 try {
     let separateMessage = separateEachChar(FIRST_MESSAGE);
     console.log(separateMessage);
-} catch (error) {
-    console.log("Error:", error);
+} catch (err) {
+    if (err instanceof TypeError) {
+        console.error(err);
+        /* or
+        console.error(separateEachChar, `${err.name}: ${err.message}`);
+        console.error(err.stack);
+         */
+    } else if (err instanceof RangeError) {
+        console.error(err);
+    } else {
+        // statements to handle any unspecified exceptions
+        throw err; // rethrowing the exception
+    }
 }
 finally {
     console.log("Program end");
 }
-
-// console.log(!!undefined);
