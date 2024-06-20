@@ -78,11 +78,11 @@ MY_MIXED_ARRAY.forEach(element => {
 });
 console.log("Normalized number           :", ...normalizedNumbers);
 
-const increasedCompare = (first, second) => first - second
+const increasedCompare = (first, second) => first - second;
 let ascendingNumbers = normalizedNumbers.toSorted(increasedCompare);
 console.log("Ascending number            :", ...ascendingNumbers);
 
-const decreasedCompare = (first, second) => second - first
+const decreasedCompare = (first, second) => second - first;
 let decreasingNumbers = normalizedNumbers.toSorted(decreasedCompare);
 console.log("Decreasing number           :", ...decreasingNumbers);
 console.log();

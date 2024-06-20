@@ -5,8 +5,8 @@ class Cat {
 
     // constructor
     constructor(name = "unknown", age = 0) {
-        this.name = name
-        this.age = age
+        this.name = name;
+        this.age = age;
     }
 
     // property for "name"
@@ -43,7 +43,7 @@ class Cat {
 
     // public behavior
     getDetails() {
-        return `Name: ${this.name}\t| Old: ${this.age}`
+        return `Name: ${this.name}\t| Old: ${this.age}`;
     }
 }
 

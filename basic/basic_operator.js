@@ -14,6 +14,6 @@ console.log("Cast to int  :", numberInt);
 console.log("Cast to float:", numberFloat);
 console.log();
 
-let number = 1264813.4567895
+let number = 1264813.4567895;
 console.log("Number to precision:", number.toPrecision(4));
 console.log("Number to fixed    :", number.toFixed(4));

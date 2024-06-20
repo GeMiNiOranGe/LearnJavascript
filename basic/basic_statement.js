@@ -1,5 +1,5 @@
 //#region if statement
-let numberForComparison = 10
+let numberForComparison = 10;
 // ==  : to check value
 // === : to check value and data type
 if (numberForComparison === "10")
@@ -10,7 +10,7 @@ console.log();
 //#endregion
 
 //#region for statement
-let size = 5
+let size = 5;
 
 // "var" can be re-declare
 var num = 3;

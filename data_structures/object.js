@@ -5,14 +5,14 @@ let maleOrFemale = {
     male,
     female,
     // 'a'	// => Throw: Unexpected token errors
-}
+};
 console.log("Gender                  :", maleOrFemale);
 
 let capitals = {
     Bangkok: 'Thailand',
     Tokyo: 'Japan',
     London: 'England'
-}
+};
 let { Bangkok, Tokyo, London } = capitals;
 /*
 equals to
@@ -34,7 +34,7 @@ const CONST_OBJ_STAR_WAR_BAD = {
     episodeThree: 3,
     mayTheFourth: 4,
     ANAKIN_SKYWALKER,
-}
+};
 const CONST_OBJ_STAR_WAR_GOOD = {
     LUKE_SKYWALKER,
     ANAKIN_SKYWALKER,
@@ -42,7 +42,7 @@ const CONST_OBJ_STAR_WAR_GOOD = {
     twoJediWalIntoACantina: 2,
     episodeThree: 3,
     mayTheFourth: 4,
-}
+};
 console.log("group your shorthand properties");
 console.log();
 //#endregion
@@ -52,13 +52,13 @@ console.log();
 const SPRADE = {
     "secondKey": 20,
     deleteKey: "trash value"
-}
+};
 console.log("Object 'SPRADE'         :", SPRADE);
 const MY_OBJECT = {
     firstKey: 10,
     "secondKey": 0,
     ...SPRADE
-}
+};
 console.log("Object                  :", MY_OBJECT);
 console.log("Get value by index      :", MY_OBJECT["firstKey"]);
 console.log("Get value by property   :", MY_OBJECT.secondKey);
@@ -73,7 +73,7 @@ console.log("After moving trash value:", MY_OBJECT);
 console.log();
 
 const MY_REFERENCE_OBJECT = MY_OBJECT;
-MY_OBJECT["firstKey"] = 100
+MY_OBJECT["firstKey"] = 100;
 console.log("Change value for object :", MY_OBJECT["firstKey"]);
 console.log("And ref obj also change :", MY_REFERENCE_OBJECT["firstKey"]);
 console.log();
@@ -120,8 +120,8 @@ equivalent to
  */
 let doctor = Object.assign({}, person);
 doctor.id = 2;
-doctor.firstName = "Abby"
-doctor.lastName = "Amanda"
+doctor.firstName = "Abby";
+doctor.lastName = "Amanda";
 delete doctor.address;
 delete doctor.favourite;
 console.log("Cloned object 'Doctor':", doctor);
@@ -139,7 +139,7 @@ let objFunc = {
     fnShortHand() {
         return `not ${this.arrowFunc()}, it's fnShortHand`
     }
-}
+};
 console.log("Object 'objFunc'     :", objFunc);
 console.log("From 'TheChoose1'    :", objFunc["TheChoose1"]);
 console.log("From 'increaseBy1(3)':", objFunc[increaseBy1(3)]);

@@ -1,11 +1,11 @@
 import Cat from "./cat.js";
 
 class Tabby extends Cat {
-    #color
+    #color;
 
     constructor(name = "unknown", old = 0, color = "unknown") {
-        super(name, old)
-        this.color = color
+        super(name, old);
+        this.color = color;
     }
 
     // property for "color"
@@ -25,7 +25,7 @@ class Tabby extends Cat {
     }
 
     getDetails() {
-        return `${super.getDetails()}\t| Color: ${this.color}`
+        return `${super.getDetails()}\t| Color: ${this.color}`;
     }
 }
 
