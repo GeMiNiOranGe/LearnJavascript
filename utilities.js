@@ -40,7 +40,7 @@ let message = "Nhập thông điệp của bạn ở đây. \\ / .  $  &+ , : ; 
  * Example: `hello world` => `.H..e..l..l..o.. ..w..o..r..l..d.`.
  * @param {string} message The input message wants to separate each character.
  * @param {string} delimiter can be set with `||`, `~`, `\n`, ...
- * @returns
+ * @returns {string}
  */
 export function separateEachChar(message, delimiter = " ") {
     if (typeof message !== "string") {
@@ -63,7 +63,7 @@ export function separateEachChar(message, delimiter = " ") {
  * Example: `hello world` => `.Hello. .world.`
  * @param {string} message The input message wants to separate each unicode word.
  * @param {string} delimiter can be set with `||`, `~`, `\n`, ...
- * @returns
+ * @returns {string}
  */
 export function separateEachUnicodeWord(message, delimiter = " ") {
     if (typeof message !== "string") {
@@ -86,7 +86,7 @@ export function separateEachUnicodeWord(message, delimiter = " ") {
 /**
  * Check whether the string is printable or not
  * @param {string} str 
- * @returns 
+ * @returns {boolean}
  */
 export function isPrint(str) {
     if (typeof str !== "string") {
@@ -101,7 +101,7 @@ export function isPrint(str) {
 /**
  * Each line will be appended with one character from the message.
  * @param {string} message The input message wants to be handled.
- * @returns 
+ * @returns {string}
  */
 export function evolveEachChar(message) {
     if (typeof message !== "string") {

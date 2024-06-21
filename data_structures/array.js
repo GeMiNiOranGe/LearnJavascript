@@ -105,7 +105,7 @@ arr2d[1] = [10, 11, 12];
 arr2d[1][1] = 13;
 console.log("Array 2d:", arr2d);
 arr2d.forEach((value, key, arr2D) => {
-    console.log('Value:', value, '\tKey:', key, '\tArray 2d:', arr2D);
+    console.log("Value:", value, "\tKey:", key, "\tArray 2d:", arr2D);
 });
 console.log();
 //#endregion
@@ -116,8 +116,8 @@ console.log();
 equivalent to
 "Array.from(otherArr)"
  */
-console.log("Array from string      :", Array.from('abc'));
-console.log("Array from other array :", Array.from(['a', 'b', 'c']));
+console.log("Array from string      :", Array.from("abc"));
+console.log("Array from other array :", Array.from(["a", "b", "c"]));
 console.log();
 
 console.log("Array of '1'           :", Array.of(1));
@@ -127,14 +127,14 @@ console.log();
 
 let arrayToFill = new Array(10).fill(1);
 console.log("Fill array             :", ...arrayToFill);
-console.log("Fill array with 'a'    :", ...arrayToFill.fill('a', 3, 7));
+console.log("Fill array with 'a'    :", ...arrayToFill.fill("a", 3, 7));
 console.log();
 
 //#region functional tools
 let arrForFunctionalTools = [1, 2, 3, 4, 5];
 const sumReducer = (accumulator, currentValue) => accumulator + currentValue;
 const multiReducer = (accumulator, currentValue) => accumulator * currentValue;
-const concatReducer = (accumulator, currentValue) => '' + accumulator + currentValue;
+const concatReducer = (accumulator, currentValue) => "" + accumulator + currentValue;
 console.log("Sum reduce             :", arrForFunctionalTools.reduce(sumReducer));
 console.log("Multi reduce           :", arrForFunctionalTools.reduce(multiReducer));
 console.log("Concat reduce          :", arrForFunctionalTools.reduce(concatReducer));

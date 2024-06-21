@@ -1,4 +1,4 @@
-import { separateEachChar } from "./utilities.js"
+import { separateEachChar } from "./utilities.js";
 
 console.log("Type of 'undefined':", !!undefined);
 console.log();

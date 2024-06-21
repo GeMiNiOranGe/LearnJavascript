@@ -1,17 +1,17 @@
 //#region destructuring
-let male = 'man';
-let female = 'woman';
+let male = "man";
+let female = "woman";
 let maleOrFemale = {
     male,
     female,
-    // 'a'	// => Throw: Unexpected token errors
+    // "a"	// => Throw: Unexpected token errors
 };
 console.log("Gender                  :", maleOrFemale);
 
 let capitals = {
-    Bangkok: 'Thailand',
-    Tokyo: 'Japan',
-    London: 'England'
+    Bangkok: "Thailand",
+    Tokyo: "Japan",
+    London: "England"
 };
 let { Bangkok, Tokyo, London } = capitals;
 /*
@@ -24,8 +24,8 @@ console.log("Capitals                :", Bangkok, Tokyo, London);
 console.log();
 
 // group your shorthand properties
-const ANAKIN_SKYWALKER = 'Anakin Skywalker';
-const LUKE_SKYWALKER = 'Luke Skywalker';
+const ANAKIN_SKYWALKER = "Anakin Skywalker";
+const LUKE_SKYWALKER = "Luke Skywalker";
 
 const CONST_OBJ_STAR_WAR_BAD = {
     episodeOne: 1,
@@ -137,7 +137,7 @@ let objFunc = {
     [increaseBy1(3)]: "key increased by 1 => 3 + 1 = 4",
     arrowFunc: () => "arrow function",
     fnShortHand() {
-        return `not ${this.arrowFunc()}, it's fnShortHand`
+        return `not ${this.arrowFunc()}, it's fnShortHand`;
     }
 };
 console.log("Object 'objFunc'     :", objFunc);
@@ -149,7 +149,7 @@ console.log();
 //#endregion
 
 //#region functional tools
-let objNumCreatedByMap = [1, 2, 3].map((value, index) => ({ index, value }))
+let objNumCreatedByMap = [1, 2, 3].map((value, index) => ({ index, value }));
 console.log("Object with destructuring:", objNumCreatedByMap);
 console.log();
 

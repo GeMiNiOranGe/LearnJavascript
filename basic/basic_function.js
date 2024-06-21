@@ -29,7 +29,7 @@ let process = (callbackFunction) => {
     for (let i = 0; i < 100; i++)
         total += 1;
     callbackFunction(total);
-}
+};
 
 console.log("Callback function");
 process(callback1);
@@ -41,7 +41,7 @@ console.log();
 const recurAdd = (a) => {
     if (a == 0) return 0;
     return recurAdd(a - 1) + a;
-}
+};
 setTimeout(() => console.log("Delay 1000 milliseconds:", recurAdd(10)), 1000);
 setTimeout(() => console.log("Delay 100 milliseconds :", recurAdd(5)), 100);
 setTimeout(() => console.log("Delay 1 milliseconds   :", recurAdd(1)), 1);

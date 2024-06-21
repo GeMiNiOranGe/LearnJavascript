@@ -8,8 +8,8 @@ let quotient = firstNumber / secondNumber;
 console.log("Result:", [sum, difference, product, quotient.toFixed(2)].join(" | "));
 console.log();
 
-let numberInt = parseInt('3.61');
-let numberFloat = parseFloat('3.61');
+let numberInt = parseInt("3.61");
+let numberFloat = parseFloat("3.61");
 console.log("Cast to int  :", numberInt);
 console.log("Cast to float:", numberFloat);
 console.log();

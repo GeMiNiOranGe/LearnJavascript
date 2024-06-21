@@ -1,3 +1,17 @@
 {
-	"type": "module"
+	"type": "module",
+	"name": "learnjavascript",
+	"version": "1.0.0",
+	"description": "> Caption: **[Node.js](https://nodejs.org/)** version must be newer than **20.0.0**",
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@eslint/js": "^9.5.0",
+		"eslint": "^9.5.0",
+		"globals": "^15.6.0"
+	}
 }
