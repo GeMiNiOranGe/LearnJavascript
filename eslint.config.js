@@ -11,23 +11,24 @@ export default [
         rules: {
             indent: [
                 "error",
-                4
+                4,
             ],
             "linebreak-style": [
                 "error",
-                "windows"
+                "windows",
             ],
             semi: [
                 "error",
-                "always"
+                "always",
             ],
             quotes: [
                 "error",
-                "double"
+                "double",
             ],
             "no-unused-vars": [
-                "warn"
-            ]
+                "warn",
+            ],
+            curly: "error",
         },
     },
 ];

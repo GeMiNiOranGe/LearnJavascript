@@ -2,10 +2,12 @@
 let numberForComparison = 10;
 // ==  : to check value
 // === : to check value and data type
-if (numberForComparison === "10")
+if (numberForComparison === "10") {
     console.log("=== | hello");
-if (numberForComparison == "10")
+}
+if (numberForComparison == "10") {
     console.log("== | hello");
+}
 console.log();
 //#endregion
 

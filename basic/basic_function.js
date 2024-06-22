@@ -17,7 +17,7 @@ function concatenateString(...args) {
     console.log("Params:", args);
     return args.join(" ");
 }
-console.log("Concat string:",concatenateString("Hey", "I", "kinda", "miss", "you"));
+console.log("Concat string:", concatenateString("Hey", "I", "kinda", "miss", "you"));
 console.log();
 //#endregion
 
@@ -26,8 +26,9 @@ let callback1 = (total) => console.log("Callback 1:", total);
 let callback2 = (total) => console.log("Callback 2:", total);
 let process = (callbackFunction) => {
     let total = 0;
-    for (let i = 0; i < 100; i++)
+    for (let i = 0; i < 100; i++) {
         total += 1;
+    }
     callbackFunction(total);
 };
 
@@ -39,7 +40,9 @@ console.log();
 
 //#region arrow function
 const recurAdd = (a) => {
-    if (a == 0) return 0;
+    if (a == 0) {
+        return 0;
+    }
     return recurAdd(a - 1) + a;
 };
 setTimeout(() => console.log("Delay 1000 milliseconds:", recurAdd(10)), 1000);
