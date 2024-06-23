@@ -123,3 +123,16 @@ export function evolveEachChar(message) {
     return result;
 };
 // console.log(evolveEachChar("hello"));
+
+/**
+ * Reverse a string
+ * @param {string} message The input message wants to be reversed.
+ * @returns {string}
+ */
+export function reverseString(message) {
+    let result = Array.from(message)
+        .reverse()
+        .join("");
+    return result;
+}
+// console.log(reverseString(message));
