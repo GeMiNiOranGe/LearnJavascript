@@ -1,4 +1,8 @@
-//#region count duplicate elements
+/**
+ * Count the number of duplicate elements.
+ * @param {any[]} args Array of elements.
+ * @returns {object}
+ */
 export function countDuplicateElements(args) {
     if (!Array.isArray(args)) {
         throw new TypeError("input must be an array");
@@ -10,9 +14,14 @@ export function countDuplicateElements(args) {
         return accumulator;
     }, initialValue);
 }
-// console.log("Number array   :", countDuplicateElements([11, 21, 11, 19, 46, 46, 19, 21]));
 
-// example: "Hello world hello hello earth earth" => output: { hello: 3, world: 1, earth: 2 }
+/**
+ * Count the number of duplicate words.
+ * 
+ * Example: "Hello world hello hello earth earth" => output: { hello: 3, world: 1, earth: 2 }
+ * @param {string} message Message is a sequence of words.
+ * @returns {object}
+ */
 export function countDuplicateWords(message) {
     if (typeof message !== "string") {
         throw new TypeError("'message' must be a(n) string");
@@ -21,18 +30,6 @@ export function countDuplicateWords(message) {
     let asciiWords = message.toLowerCase().match(/(\w+)/g);
     return countDuplicateElements(asciiWords);
 }
-let testCase = "   Hello    how heLLo    earth hOw aRe You yoU    thIs you THat earth   ";
-let label = "Test case time";
-// console.time(label);
-// console.log("Test case      :", countDuplicateWords(testCase));
-// console.timeEnd(label);
-// console.log();
-//#endregion
-
-//#region separate each char/word
-// enter your message here
-let message = "Nhập thông điệp của bạn ở đây. \\ / .  $  &+ , : ;  < > .-   =   @ # | ' -  ^   * ( ?   ) % !";
-// console.log("Raw message       :", message);
 
 /**
  * Create a character-separated string.
@@ -55,7 +52,6 @@ export function separateEachChar(message, delimiter = " ") {
         .join(insideDelim);
     return delimiter + chars + delimiter;
 }
-// console.log("Separate each char:", separateEachChar(message, "||"));
 
 /**
  * Create a unicode word-separated string.
@@ -79,9 +75,6 @@ export function separateEachUnicodeWord(message, delimiter = " ") {
         .join(insideDelim);
     return delimiter + unicodeWords + delimiter;
 }
-// console.log("Separate each word:", separateEachUnicodeWord(message, "||"));
-// console.log();
-//#endregion
 
 /**
  * Check whether the string is printable or not
@@ -122,7 +115,6 @@ export function evolveEachChar(message) {
     }
     return result;
 };
-// console.log(evolveEachChar("hello"));
 
 /**
  * Reverse a string
@@ -135,4 +127,30 @@ export function reverseString(message) {
         .join("");
     return result;
 }
-// console.log(reverseString(message));
+
+function main() {
+    console.log("Number count   :", countDuplicateElements([11, 21, 11, 19, 46, 46, 19, 21]));
+    console.log();
+
+    let testCase = "   Hello    how heLLo    earth hOw aRe You yoU    thIs you THat earth   ";
+    let label = "Test case time";
+    console.time(label);
+    console.log("Test case      :", countDuplicateWords(testCase));
+    console.timeEnd(label);
+    console.log();
+
+    // enter your message here, special: \ / . $ & + , : ; < > - = @ # | ' - ^ * ( ? ) % !
+    let message = "Nhập thông điệp của bạn ở đây";
+    console.log("Raw message       :", message);
+    console.log("Separate each char:", separateEachChar(message, "||"));
+    console.log("Separate each word:", separateEachUnicodeWord(message, "||"));
+    console.log();
+
+    console.log("Evolve each char  :");
+    console.log(evolveEachChar("Hello"));
+    console.log();
+
+    console.log("String reversed   :", reverseString(message));
+}
+
+// main();
