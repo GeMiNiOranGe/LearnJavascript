@@ -1,3 +1,5 @@
+import { NotPositiveNumberException } from "./custom_exception.js";
+
 class Cat {
     // private attribute
     #name;
@@ -37,6 +39,9 @@ class Cat {
     set age(value) {
         if (typeof value !== "number") {
             throw new TypeError("'age' must be set to number");
+        }
+        if (value < 0) {
+            throw new NotPositiveNumberException("age");
         }
         this.#age = value;
     }

@@ -9,6 +9,7 @@ console.log("Instance of 'Cat':", cacaoCat instanceof Cat);
 console.log();
 
 cacaoCat.name = "Flower";
-console.log("cacaoCat:", cacaoCat.getDetails());
+cacaoCat.age = 10;
+console.log("cacaoCat -", cacaoCat.getDetails());
 
-console.log("sunTabby:", sunTabby.getDetails());
+console.log("sunTabby -", sunTabby.getDetails());
