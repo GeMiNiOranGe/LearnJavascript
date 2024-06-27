@@ -102,15 +102,10 @@ export function evolveEachChar(message) {
     }
 
     let result = "";
-    let line = "";
-    for (let i = 0; i < message.length; i++) {
-        const char = message[i];
-        if (isPrint(char)) {
-            line += char;
-            result += line;
-            if (i != message.length - 1) {
-                result += "\n";
-            }
+    for (let i = 1; i <= message.length; i++) {
+        result += message.substring(0, i);
+        if (i != message.length) {
+            result += "\n";
         }
     }
     return result;
