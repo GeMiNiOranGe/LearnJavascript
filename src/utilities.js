@@ -1,7 +1,7 @@
 /**
  * Count the number of duplicate elements.
  * @param {any[]} args Array of elements.
- * @returns {object}
+ * @returns {object} `{element: numberOfDuplicate, ... }`
  */
 export function countDuplicateElements(args) {
     if (!Array.isArray(args)) {
@@ -20,7 +20,7 @@ export function countDuplicateElements(args) {
  * 
  * Example: "Hello world hello hello earth earth" => output: { hello: 3, world: 1, earth: 2 }
  * @param {string} message Message is a sequence of words.
- * @returns {object}
+ * @returns {object} `{word: numberOfDuplicate, ... }`
  */
 export function countDuplicateWords(message) {
     if (typeof message !== "string") {
