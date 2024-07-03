@@ -10,7 +10,7 @@ export function countDuplicateElements(args) {
 
     let initialValue = {};
     return args.reduce((accumulator, currentValue) => {
-        accumulator[currentValue] = (accumulator[currentValue] ?? 0) + 1;
+        accumulator[currentValue] = (accumulator[currentValue] || 0) + 1;
         return accumulator;
     }, initialValue);
 }
