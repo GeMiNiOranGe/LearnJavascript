@@ -18,7 +18,7 @@ export function countDuplicateElements(args) {
 /**
  * Count the number of duplicate words.
  * 
- * Example: "Hello world hello hello earth earth" => output: { hello: 3, world: 1, earth: 2 }
+ * @example "Hello world hello hello earth earth" => { hello: 3, world: 1, earth: 2 }
  * @param {string} message Message is a sequence of words.
  * @returns {object} `{word: numberOfDuplicate, ... }`
  */
@@ -34,7 +34,7 @@ export function countDuplicateWords(message) {
 /**
  * Create a character-separated string.
  * 
- * Example: `hello world` => `.H..e..l..l..o.. ..w..o..r..l..d.`.
+ * @example "hello world" => ".H..e..l..l..o.. ..w..o..r..l..d."
  * @param {string} message The input message wants to separate each character.
  * @param {string} delimiter can be set with `||`, `~`, `\n`, ...
  * @returns {string}
@@ -56,7 +56,7 @@ export function separateEachChar(message, delimiter = " ") {
 /**
  * Create a unicode word-separated string.
  * 
- * Example: `hello world` => `.Hello. .world.`
+ * @example "hello world" => ".Hello. .world."
  * @param {string} message The input message wants to separate each unicode word.
  * @param {string} delimiter can be set with `||`, `~`, `\n`, ...
  * @returns {string}
