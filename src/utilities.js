@@ -123,6 +123,43 @@ export function reverseString(message) {
     return result;
 }
 
+export function getIANATimeZones() {
+    return Intl.supportedValuesOf("timeZone");
+};
+
+export function getCurrentTimeZones() {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+};
+
+/**
+ * @param {number} year
+ * @param {number} monthIndex
+ */
+export function getDaysInMonth(year, monthIndex) {
+    return new Date(year, monthIndex, 0).getDate();
+}
+
+/**
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
+export function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * @param {Date} start 
+ * @param {Date} end 
+ * @returns {Date}
+ */
+export function getRandomDate(start, end) {
+    const randomTime = Math.random() * (end.getTime() - start.getTime() + 1) + start.getTime();
+    return new Date(randomTime);
+}
+
 function main() {
     console.log("Number count   :", countDuplicateElements([11, 21, 11, 19, 46, 46, 19, 21]));
     console.log();
