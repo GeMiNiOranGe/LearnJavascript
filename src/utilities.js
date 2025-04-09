@@ -127,8 +127,74 @@ export function getIANATimeZones() {
     return Intl.supportedValuesOf("timeZone");
 };
 
-export function getCurrentTimeZones() {
+export function getCurrentTimeZone() {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
+};
+
+export function getCurrentLocale() {
+    return Intl.DateTimeFormat().resolvedOptions().locale;
+};
+
+/**
+ * @param {string} ianaTimeZone 
+ * @returns {string}
+ */
+export function getTimeZoneAbbreviationByDst(ianaTimeZone) {
+    const dateTimeFormat = Intl.DateTimeFormat(getCurrentLocale(), {
+        timeZoneName: "short",
+        timeZone: ianaTimeZone,
+    });
+
+    // converts an array of objects with the structure '{ type: <value>, value: <value> }'
+    const parts = dateTimeFormat.formatToParts();
+    const offsetPart = parts.find((i) => i.type === "timeZoneName");
+
+    return offsetPart?.value;
+};
+
+/**
+ * @param {string} ianaTimeZone
+ * @param {Date} date
+ * @returns {number}
+ */
+export function getOffsetInSeconds(ianaTimeZone, date = new Date()) {
+    const dateString = date.toString();
+    const timeZone = date.toLocaleString(getCurrentLocale(), {
+        timeZone: ianaTimeZone,
+        timeStyle: "long"
+    }).split(" ").slice(-1)[0];
+
+    // gets the upper offset based on the current UTC
+    const upperTimeOffset = Date.parse(`${dateString} UTC`);
+
+    // gets the lower offset by using the 'ianaTimeZone'
+    const lowerTimeOffset = Date.parse(`${dateString} ${timeZone}`);
+
+    return (upperTimeOffset - lowerTimeOffset) / 1000;
+};
+
+/**
+ * @example
+ * const offsetUtc = getOffsetUtcByDst("America/New_York")
+ * console.log(offsetUtc) // Output: -04:00
+ * @param {string} ianaTimeZone
+ * @returns
+ */
+export function getOffsetUtcByDst(ianaTimeZone) {
+    const offsetInSeconds = getOffsetInSeconds(ianaTimeZone);
+
+    // e.g: 49500 => ['', '49500'], -14400 => ['-', '14400']
+    const pattern = /([+-]){0,1}(\d+)/;
+    const matchData = offsetInSeconds.toString().match(pattern);
+    if (!matchData) {
+        return "+00:00";
+    }
+
+    const [, sign, second] = matchData;
+    const hour = Math.floor(second / 3600);
+    const minute = second / 60 % 60;
+
+    return `${sign === "-" ? "-" : "+"}${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
 };
 
 /**
